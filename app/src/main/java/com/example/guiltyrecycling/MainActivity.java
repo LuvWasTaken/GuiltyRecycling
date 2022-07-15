@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Log.v("myApp", "Write It button is clicked");
                 Intent intent = new Intent();
-                //writeActivity to be created by Luis
+                //writeActivity to be created by Mirelys
                 intent.setClass(MainActivity.this, WriteActivity.class);
             }
         });
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Log.v("myApp", "Speak It button is clicked");
                 Intent intent = new Intent();
-                //writeActivity to be created by Luis
+                //voiceActivity to be created by Luis
                 intent.setClass(MainActivity.this, VoiceActivity.class);
             }
         });
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Log.v("myApp", "Visualize It button is clicked");
                 Intent intent = new Intent();
-                //writeActivity to be created by Luis
+                //imageActivity to be created by Tsuf
                 intent.setClass(MainActivity.this, ImageActivity.class);
             }
         });
