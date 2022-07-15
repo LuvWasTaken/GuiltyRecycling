@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">GuiltyRecycling</string>
+    <string name="voiceString">Speak It</string>
+    <string name="typeString">Write It</string>
+    <string name="imageString">Visualize It</string>
 </resources>
