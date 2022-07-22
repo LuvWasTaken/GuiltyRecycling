@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 //imageActivity to be created by Tsuf
                 intent.setClass(MainActivity.this, ImageActivity.class);
+                startActivity(intent);
             }
         });
     }
