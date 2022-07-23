@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 //writeActivity to be created by Mirelys
                 intent.setClass(MainActivity.this, WriteActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 //voiceActivity to be created by Luis
                 intent.setClass(MainActivity.this, VoiceActivity.class);
+                startActivity(intent);
             }
         });
 
