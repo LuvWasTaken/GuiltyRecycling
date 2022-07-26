@@ -10,15 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class ImageActivity extends AppCompatActivity {
-    GridView gridView;
-    ArrayList<GridItem> grid = new ArrayList<GridItem>();
+    GridView gridView1;
+    ArrayList<GridItem> grid1 = new ArrayList<GridItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_activity);
 
-        gridView = (GridView) findViewById(R.id.GridView01);
+        gridView1 = (GridView) findViewById(R.id.ImageGrid);
 
         Bitmap glassIm, plasticIm, metalIm, paperIm, organicIm, ewasteIm;
         glassIm = BitmapFactory.decodeResource(getResources(), R.drawable.glass);
@@ -31,35 +31,35 @@ public class ImageActivity extends AppCompatActivity {
         GridItem glassItem = new GridItem();
         glassItem.image = glassIm;
         glassItem.title = "GLASS";
-        grid.add(glassItem);
+        grid1.add(glassItem);
 
         GridItem plasticItem = new GridItem();
         plasticItem.image = plasticIm;
         plasticItem.title = "PLASTIC";
-        grid.add(plasticItem);
+        grid1.add(plasticItem);
 
         GridItem metalItem = new GridItem();
         metalItem.image = metalIm;
         metalItem.title = "METAL";
-        grid.add(metalItem);
+        grid1.add(metalItem);
 
         GridItem paperItem = new GridItem();
         paperItem.image = paperIm;
         paperItem.title = "PAPER";
-        grid.add(paperItem);
+        grid1.add(paperItem);
 
         GridItem organicItem = new GridItem();
         organicItem.image = organicIm;
         organicItem.title = "ORGANIC";
-        grid.add(organicItem);
+        grid1.add(organicItem);
 
         GridItem ewasteItem = new GridItem();
         ewasteItem.image = ewasteIm;
         ewasteItem.title = "E-WASTE";
-        grid.add(ewasteItem);
+        grid1.add(ewasteItem);
 
-        GridItemAdapter gridItemAdapter = new GridItemAdapter(this, R.layout.grid_item, grid);
-        gridView.setAdapter(gridItemAdapter);
+        GridItemAdapter gridItemAdapter = new GridItemAdapter(this, R.layout.grid_item, grid1);
+        gridView1.setAdapter(gridItemAdapter);
 
     }
 }

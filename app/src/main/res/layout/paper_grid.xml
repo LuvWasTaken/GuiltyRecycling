@@ -6,7 +6,7 @@
 
 
     <GridView
-        android:id="@+id/ImageGrid"
+        android:id="@+id/PaperGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:horizontalSpacing="6dp"
