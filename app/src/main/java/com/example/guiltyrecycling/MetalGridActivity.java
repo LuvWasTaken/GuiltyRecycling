@@ -54,14 +54,13 @@ public class MetalGridActivity extends AppCompatActivity {
         metal6Item.image = metal6Im;
         grid4.add(metal6Item);
 
-        GridItem metalItem = new GridItem();
-        metalItem.image = metalIm;
-        grid4.add(metalItem);
+        GridItem metal7Item = new GridItem();
+        metal7Item.image = metal7Im;
+        grid4.add(metal7Item);
 
-        GridItem metalItem = new GridItem();
-        metalItem.image = metalIm;
-        grid4.add(metalItem);
-
+        GridItem metal8Item = new GridItem();
+        metal8Item.image = metal8Im;
+        grid4.add(metal8Item);
 
         GridItemAdapter gridItemAdapter = new GridItemAdapter(this, R.layout.grid_item, grid4);
         gridView4.setAdapter(gridItemAdapter);
