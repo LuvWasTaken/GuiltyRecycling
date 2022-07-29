@@ -3,4 +3,6 @@
     <string name="voiceString">Speak It...</string>
     <string name="typeString">Write It...</string>
     <string name="imageString">Visualize It...</string>
+    <string name="buttonRecord">Start</string>
+    <string name="recordedText">Recorded Text</string>
 </resources>

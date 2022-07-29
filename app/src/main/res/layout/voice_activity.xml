@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:background="#000000">
+
+    <Button
+        android:id="@+id/ButtonRecord"
+        android:layout_width="390dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="20dp"
+        android:background="#4d4d4d"
+        android:onClick="recordSpeech"
+        android:text="@string/buttonRecord"
+        android:textColor="#ffffff" />
+
+</LinearLayout>
