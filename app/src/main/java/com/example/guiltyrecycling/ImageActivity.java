@@ -21,7 +21,7 @@ public class ImageActivity extends AppCompatActivity {
         gridView1 = (GridView) findViewById(R.id.ImageGrid);
 
         Bitmap glassIm, plasticIm, metalIm, paperIm, organicIm, ewasteIm;
-        glassIm = BitmapFactory.decodeResource(getResources(), R.drawable.imageactivity.glass);
+        glassIm = BitmapFactory.decodeResource(getResources(), R.drawable.glass);
         plasticIm = BitmapFactory.decodeResource(getResources(), R.drawable.plastic);
         metalIm = BitmapFactory.decodeResource(getResources(), R.drawable.metal);
         paperIm = BitmapFactory.decodeResource(getResources(), R.drawable.paper);
