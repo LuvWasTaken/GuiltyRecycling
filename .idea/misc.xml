@@ -15,6 +15,11 @@
         <entry key="..\:/Users/WIT/WITCode/Android Studio/workspace_mobileapp/GuiltyRecycling/app/src/main/res/layout/organic_grid.xml" value="0.1" />
         <entry key="..\:/Users/WIT/WITCode/Android Studio/workspace_mobileapp/GuiltyRecycling/app/src/main/res/layout/paper_grid.xml" value="0.1" />
         <entry key="..\:/Users/WIT/WITCode/Android Studio/workspace_mobileapp/GuiltyRecycling/app/src/main/res/layout/plastic_grid.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/ewaste_grid.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/glass_grid.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/search_activity.xml" value="0.15328467153284672" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.6533203125" />
       </map>
     </option>
   </component>
