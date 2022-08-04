@@ -5,4 +5,14 @@
     <string name="imageString">Visualize It...</string>
     <string name="buttonRecord">Start</string>
     <string name="recordedText">Recorded Text</string>
+
+    <string-array name="my_items">
+        <item>Metal</item>
+        <item>Glass</item>
+        <item>Paper</item>
+        <item>Organic</item>
+        <item>Plastic</item>
+        <item>E-Waste</item>
+
+    </string-array>
 </resources>
