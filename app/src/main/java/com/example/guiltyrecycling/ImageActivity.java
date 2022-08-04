@@ -3,6 +3,7 @@ package com.example.guiltyrecycling;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class ImageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_activity);
 
-        gridView1 = (GridView) findViewById(R.id.ImageGrid);
+        gridView1 = (GridView) findViewById(R.id.CategoryGrid);
 
         Bitmap glassIm, plasticIm, metalIm, paperIm, organicIm, ewasteIm;
         glassIm = BitmapFactory.decodeResource(getResources(), R.drawable.glass);

@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-
     <GridView
-        android:id="@+id/ImageGrid"
+        android:id="@+id/CategoryGrid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:horizontalSpacing="6dp"
         android:verticalSpacing="6dp"
-        android:numColumns="3"/>
+        android:numColumns="3">
+        <ImageButton
+            android:id="@+id/glassBtn"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/glass" />
+        <ImageButton
+            android:id="@+id/plasticBtn"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/plastic" />
+        <ImageButton
+            android:id="@+id/metalBtn"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/metal" />
+        <ImageButton
+            android:id="@+id/paperBtn"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/glass" />
+        <ImageButton
+            android:id="@+id/organicBtn"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/glass" />
+        <ImageButton
+            android:id="@+id/ewasteBtn"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/glass" />
+    </GridView>
+
+    <FrameLayout
+        android:id="@+id/gridcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/CategoryGrid">
+    </FrameLayout>
+
 
 </LinearLayout>
