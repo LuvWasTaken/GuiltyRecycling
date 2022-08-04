@@ -1,15 +1,21 @@
 package com.example.guiltyrecycling;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.widget.GridView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class ImageActivity extends AppCompatActivity {
+public class ImageActivity extends AppCompatActivity  implements BottomNavigationView.OnItemSelectedListener {
     GridView gridView1;
     ArrayList<GridItem> grid1 = new ArrayList<GridItem>();
 
@@ -27,6 +33,8 @@ public class ImageActivity extends AppCompatActivity {
         paperIm = BitmapFactory.decodeResource(getResources(), R.drawable.paper);
         organicIm = BitmapFactory.decodeResource(getResources(), R.drawable.organic);
         ewasteIm = BitmapFactory.decodeResource(getResources(), R.drawable.ewaste);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(this);
 
         GridItem glassItem = new GridItem();
         glassItem.image = glassIm;
@@ -61,5 +69,31 @@ public class ImageActivity extends AppCompatActivity {
         GridItemAdapter gridItemAdapter = new GridItemAdapter(this, R.layout.grid_item, grid1);
         gridView1.setAdapter(gridItemAdapter);
 
+    }
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.write:
+                Log.v("myApp", "write nav button is clicked");
+                intent = new Intent();
+                intent.setClass(ImageActivity.this, WriteActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.speak:
+                Log.v("myApp", "Speak nav button is clicked");
+                intent = new Intent();
+                intent.setClass(ImageActivity.this, VoiceActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.image:
+                Log.v("myApp", "Visualize nav button is clicked");
+                intent = new Intent();
+                intent.setClass(ImageActivity.this, ImageActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return false;
     }
 }

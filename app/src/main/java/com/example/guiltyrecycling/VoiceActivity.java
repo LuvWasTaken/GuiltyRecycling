@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +21,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class VoiceActivity extends AppCompatActivity {
+public class VoiceActivity extends AppCompatActivity implements BottomNavigationView.OnItemSelectedListener{
 
     private static final int REQUEST_CODE = 100;
     private static final int CATEGORY_CODE = 101;
@@ -54,7 +59,6 @@ public class VoiceActivity extends AppCompatActivity {
     String whatKindOfPlastic = "What kind of plastic is it? Is it a bottle or milk jug?";
     String whatKindOfEwaste = "What kind of e waste is it? Baterries, a printer, a tv, led bulbs, a phone, a computer, a fridge or a freezer";
     String whatKindOfGlass = "What kind of glass is it? A bottle, perfume bottle, a jar, or window glass";
-
 
     TextView displayTextView;
 
@@ -95,6 +99,8 @@ public class VoiceActivity extends AppCompatActivity {
 
         displayTextView = (TextView) findViewById(R.id.displayText);
         displayTextView.setText(greetingLine);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(this);
 
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -312,5 +318,31 @@ public class VoiceActivity extends AppCompatActivity {
             }
 
         }
+    }
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.write:
+                Log.v("myApp", "write nav button is clicked");
+                intent = new Intent();
+                intent.setClass(VoiceActivity.this, WriteActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.speak:
+                Log.v("myApp", "Speak nav button is clicked");
+                intent = new Intent();
+                intent.setClass(VoiceActivity.this, VoiceActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.image:
+                Log.v("myApp", "Visualize nav button is clicked");
+                intent = new Intent();
+                intent.setClass(VoiceActivity.this, ImageActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return false;
     }
 }

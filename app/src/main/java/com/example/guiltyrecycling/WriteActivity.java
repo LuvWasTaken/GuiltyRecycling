@@ -1,6 +1,8 @@
 package com.example.guiltyrecycling;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -8,15 +10,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class WriteActivity extends AppCompatActivity {
+public class WriteActivity extends AppCompatActivity implements BottomNavigationView.OnItemSelectedListener{
 
     ListView search_item;
     ArrayAdapter<String> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,8 @@ public class WriteActivity extends AppCompatActivity {
 
         ArrayList<String> arrayItem = new ArrayList<>();
         arrayItem.addAll(Arrays.asList(getResources().getStringArray(R.array.my_items)));
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(this);
 
         adapter = new ArrayAdapter<String>(
                 WriteActivity.this,
@@ -61,4 +69,31 @@ public class WriteActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.write:
+                Log.v("myApp", "write nav button is clicked");
+                intent = new Intent();
+                intent.setClass(WriteActivity.this, WriteActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.speak:
+                Log.v("myApp", "Speak nav button is clicked");
+                intent = new Intent();
+                intent.setClass(WriteActivity.this, VoiceActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.image:
+                Log.v("myApp", "Visualize nav button is clicked");
+                intent = new Intent();
+                intent.setClass(WriteActivity.this, ImageActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return false;
     }
+}
+
