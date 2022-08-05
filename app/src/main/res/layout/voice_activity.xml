@@ -31,7 +31,7 @@
             android:id="@+id/ButtonRecord"
             android:layout_width="390dp"
             android:layout_height="59dp"
-            android:layout_marginTop="132dp"
+            android:layout_marginTop="520dp"
             android:background="#4d4d4d"
             android:onClick="recordSpeech"
             android:text="@string/buttonRecord"
