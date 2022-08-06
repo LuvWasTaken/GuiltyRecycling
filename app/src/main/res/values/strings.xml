@@ -15,6 +15,82 @@
         <item>E-Waste</item>
 
     </string-array>
+
+    <string-array name="items_not_recyclebable_count">
+        <item>1</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>6</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="metals">
+        <item>Soda Can / Tin Can</item>
+        <item>Metal Water Bottle</item>
+        <item>Aluminum Foil</item>
+        <item>Pots / Pans</item>
+        <item>Baking Sheets</item>
+        <item>Utensils</item>
+        <item>Bottle Caps</item>
+        <item>Toasters / Appliances</item>
+    </string-array>
+
+    <string-array name="glass">
+        <item>Bottle</item>
+        <item>Perfume Bottle</item>
+        <item>Jar</item>
+        <item>Glass</item>
+        <item>Light Bulb</item>
+        <item>Mirror</item>
+        <item>Broken Glass</item>
+    </string-array>
+
+    <string-array name="paper">
+        <item>Newspaper</item>
+        <item>Flattened Cardboard</item>
+        <item>Books</item>
+        <item>Food Boxes</item>
+        <item>Paper Plates Without Food</item>
+        <item>Paper Towel</item>
+        <item>Paper Milk Cartons</item>
+        <item>Pizza Boxes</item>
+    </string-array>
+
+
+    <string-array name="organic">
+        <item>Food Scrapes</item>
+        <item>Coffee Grounds</item>
+        <item>Eggshells</item>
+        <item>Banana Peel</item>
+        <item>Paper Napkins</item>
+        <item>Tea Bags</item>
+        <item>Meat</item>
+        <item>Bones</item>
+    </string-array>
+
+
+    <string-array name="plastic">
+        <item>Bottles / Toiletries Bottles</item>
+        <item>Milk Jug</item>
+        <item>Grocery Bags</item>
+        <item>Straws</item>
+        <item>Cling Wrap</item>
+        <item>Black Plastic</item>
+        <item>Plastic Mailing Sleeves</item>
+        <item>Takeout Containers</item>
+    </string-array>
+
+    <string-array name="ewaste">
+        <item>Batteries</item>
+        <item>Printers</item>
+        <item>Tv\'s</item>
+        <item>LED Bulbs</item>
+        <item>Phones</item>
+        <item>Computers</item>
+        <item>Fridges / Freezers</item>
+        <item>Mercury / Lead</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
