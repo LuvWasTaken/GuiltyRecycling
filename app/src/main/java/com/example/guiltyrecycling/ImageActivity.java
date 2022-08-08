@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class ImageActivity extends AppCompatActivity {
     ImageButton plasticBtn;
     ImageButton organicBtn;
     ImageButton ewasteBtn;
+    ImageView imageView;
 
 
     @Override
@@ -38,25 +40,28 @@ public class ImageActivity extends AppCompatActivity {
         organicBtn = findViewById(R.id.organicBtn);
         ewasteBtn = findViewById(R.id.ewasteBtn);
 
-        if (savedInstanceState == null) {
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            Fragment glassfragmentonCreate = new GlassFragment();
-            transaction.replace(R.id.container, glassfragmentonCreate);
-            transaction.commit();
-        }
+//        if (savedInstanceState == null) {
+//            FragmentManager fm = getSupportFragmentManager();
+//            FragmentTransaction transaction = fm.beginTransaction();
+//            Fragment glassfragmentonCreate = new GlassFragment();
+//            transaction.replace(R.id.container, glassfragmentonCreate);
+//            transaction.commit();
+//        }
 
 
         glassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (savedInstanceState == null) {
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    Fragment glassfragment = new GlassFragment();
-                    fragmentTransaction.replace(R.id.container, glassfragment);
-                    fragmentTransaction.commit();
-                }
+//                if (savedInstanceState == null) {
+//                    FragmentManager fm = getSupportFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                    Fragment glassfragment = new GlassFragment();
+//                    fragmentTransaction.replace(R.id.container, glassfragment);
+//                    fragmentTransaction.commit();
+//                }
+
+                imageView = (ImageView) findViewById(R.id.imageGrid);
+                imageView.setImageResource(R.drawable.glassgrid);
                 Toast.makeText(ImageActivity.this,
                         "Glass ImageButton Clicked.", Toast.LENGTH_SHORT).show();
             }
@@ -65,11 +70,14 @@ public class ImageActivity extends AppCompatActivity {
         paperBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                Fragment paperfragment = new PaperFragment();
-                fragmentTransaction.replace(R.id.container, paperfragment);
-                fragmentTransaction.commit();
+//                FragmentManager fm = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                Fragment paperfragment = new PaperFragment();
+//                fragmentTransaction.replace(R.id.container, paperfragment);
+//                fragmentTransaction.commit();
+
+                imageView = (ImageView) findViewById(R.id.imageGrid);
+                imageView.setImageResource(R.drawable.papergrid);
                 Toast.makeText(ImageActivity.this,
                         "Paper ImageButton Clicked.", Toast.LENGTH_SHORT).show();
             }
@@ -78,11 +86,14 @@ public class ImageActivity extends AppCompatActivity {
         metalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                Fragment metalfragment = new MetalFragment();
-                fragmentTransaction.replace(R.id.container, metalfragment);
-                fragmentTransaction.commit();
+//                FragmentManager fm = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                Fragment metalfragment = new MetalFragment();
+//                fragmentTransaction.replace(R.id.container, metalfragment);
+//                fragmentTransaction.commit();
+
+                imageView = (ImageView) findViewById(R.id.imageGrid);
+                imageView.setImageResource(R.drawable.metalgrid);
                 Toast.makeText(ImageActivity.this,
                         "Metal ImageButton Clicked.", Toast.LENGTH_SHORT).show();
             }
@@ -91,11 +102,14 @@ public class ImageActivity extends AppCompatActivity {
         plasticBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                Fragment plasticfragment = new PlasticFragment();
-                fragmentTransaction.replace(R.id.container, plasticfragment);
-                fragmentTransaction.commit();
+//                FragmentManager fm = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                Fragment plasticfragment = new PlasticFragment();
+//                fragmentTransaction.replace(R.id.container, plasticfragment);
+//                fragmentTransaction.commit();
+
+                imageView = (ImageView) findViewById(R.id.imageGrid);
+                imageView.setImageResource(R.drawable.plasticgrid);
                 Toast.makeText(ImageActivity.this,
                         "Plastic ImageButton Clicked.", Toast.LENGTH_SHORT).show();
             }
@@ -104,11 +118,14 @@ public class ImageActivity extends AppCompatActivity {
         organicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                Fragment organicfragment = new OrganicFragment();
-                fragmentTransaction.replace(R.id.container, organicfragment);
-                fragmentTransaction.commit();
+//                FragmentManager fm = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                Fragment organicfragment = new OrganicFragment();
+//                fragmentTransaction.replace(R.id.container, organicfragment);
+//                fragmentTransaction.commit();
+
+                imageView = (ImageView) findViewById(R.id.imageGrid);
+                imageView.setImageResource(R.drawable.organicgrid);
                 Toast.makeText(ImageActivity.this,
                         "Organic ImageButton Clicked.", Toast.LENGTH_SHORT).show();
             }
@@ -117,11 +134,14 @@ public class ImageActivity extends AppCompatActivity {
         ewasteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                Fragment ewastefragment = new EWasteFragment();
-                fragmentTransaction.replace(R.id.container, ewastefragment);
-                fragmentTransaction.commit();
+//                FragmentManager fm = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                Fragment ewastefragment = new EWasteFragment();
+//                fragmentTransaction.replace(R.id.container, ewastefragment);
+//                fragmentTransaction.commit();
+
+                imageView = (ImageView) findViewById(R.id.imageGrid);
+                imageView.setImageResource(R.drawable.ewastegrid);
                 Toast.makeText(ImageActivity.this,
                         "EWaste ImageButton Clicked.", Toast.LENGTH_SHORT).show();
             }
