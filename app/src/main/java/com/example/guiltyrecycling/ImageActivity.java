@@ -1,99 +1,131 @@
 package com.example.guiltyrecycling;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
-public class ImageActivity extends AppCompatActivity  implements BottomNavigationView.OnItemSelectedListener {
-    GridView gridView1;
-    ArrayList<GridItem> grid1 = new ArrayList<GridItem>();
+public class ImageActivity extends AppCompatActivity {
+
+    ImageButton glassBtn;
+    ImageButton paperBtn;
+    ImageButton metalBtn;
+    ImageButton plasticBtn;
+    ImageButton organicBtn;
+    ImageButton ewasteBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_activity);
 
-        gridView1 = (GridView) findViewById(R.id.ImageGrid);
+        glassBtn = findViewById(R.id.glassBtn);
+        paperBtn = findViewById(R.id.paperBtn);
+        metalBtn = findViewById(R.id.metalBtn);
+        plasticBtn = findViewById(R.id.plasticBtn);
+        organicBtn = findViewById(R.id.organicBtn);
+        ewasteBtn = findViewById(R.id.ewasteBtn);
 
-        Bitmap glassIm, plasticIm, metalIm, paperIm, organicIm, ewasteIm;
-        glassIm = BitmapFactory.decodeResource(getResources(), R.drawable.glass);
-        plasticIm = BitmapFactory.decodeResource(getResources(), R.drawable.plastic);
-        metalIm = BitmapFactory.decodeResource(getResources(), R.drawable.metal);
-        paperIm = BitmapFactory.decodeResource(getResources(), R.drawable.paper);
-        organicIm = BitmapFactory.decodeResource(getResources(), R.drawable.organic);
-        ewasteIm = BitmapFactory.decodeResource(getResources(), R.drawable.ewaste);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnItemSelectedListener(this);
-
-        GridItem glassItem = new GridItem();
-        glassItem.image = glassIm;
-        glassItem.title = "GLASS";
-        grid1.add(glassItem);
-
-        GridItem plasticItem = new GridItem();
-        plasticItem.image = plasticIm;
-        plasticItem.title = "PLASTIC";
-        grid1.add(plasticItem);
-
-        GridItem metalItem = new GridItem();
-        metalItem.image = metalIm;
-        metalItem.title = "METAL";
-        grid1.add(metalItem);
-
-        GridItem paperItem = new GridItem();
-        paperItem.image = paperIm;
-        paperItem.title = "PAPER";
-        grid1.add(paperItem);
-
-        GridItem organicItem = new GridItem();
-        organicItem.image = organicIm;
-        organicItem.title = "ORGANIC";
-        grid1.add(organicItem);
-
-        GridItem ewasteItem = new GridItem();
-        ewasteItem.image = ewasteIm;
-        ewasteItem.title = "E-WASTE";
-        grid1.add(ewasteItem);
-
-        GridItemAdapter gridItemAdapter = new GridItemAdapter(this, R.layout.grid_item, grid1);
-        gridView1.setAdapter(gridItemAdapter);
-
-    }
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()) {
-            case R.id.write:
-                Log.v("myApp", "write nav button is clicked");
-                intent = new Intent();
-                intent.setClass(ImageActivity.this, WriteActivity.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.speak:
-                Log.v("myApp", "Speak nav button is clicked");
-                intent = new Intent();
-                intent.setClass(ImageActivity.this, VoiceActivity.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.image:
-                Log.v("myApp", "Visualize nav button is clicked");
-                intent = new Intent();
-                intent.setClass(ImageActivity.this, ImageActivity.class);
-                startActivity(intent);
-                return true;
+        if (savedInstanceState == null) {
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            Fragment glassfragmentonCreate = new GlassFragment();
+            transaction.replace(R.id.container, glassfragmentonCreate);
+            transaction.commit();
         }
-        return false;
+
+
+        glassBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (savedInstanceState == null) {
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                    Fragment glassfragment = new GlassFragment();
+                    fragmentTransaction.replace(R.id.container, glassfragment);
+                    fragmentTransaction.commit();
+                }
+                Toast.makeText(ImageActivity.this,
+                        "Glass ImageButton Clicked.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        paperBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                Fragment paperfragment = new PaperFragment();
+                fragmentTransaction.replace(R.id.container, paperfragment);
+                fragmentTransaction.commit();
+                Toast.makeText(ImageActivity.this,
+                        "Paper ImageButton Clicked.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        metalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                Fragment metalfragment = new MetalFragment();
+                fragmentTransaction.replace(R.id.container, metalfragment);
+                fragmentTransaction.commit();
+                Toast.makeText(ImageActivity.this,
+                        "Metal ImageButton Clicked.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        plasticBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                Fragment plasticfragment = new PlasticFragment();
+                fragmentTransaction.replace(R.id.container, plasticfragment);
+                fragmentTransaction.commit();
+                Toast.makeText(ImageActivity.this,
+                        "Plastic ImageButton Clicked.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        organicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                Fragment organicfragment = new OrganicFragment();
+                fragmentTransaction.replace(R.id.container, organicfragment);
+                fragmentTransaction.commit();
+                Toast.makeText(ImageActivity.this,
+                        "Organic ImageButton Clicked.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ewasteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                Fragment ewastefragment = new EWasteFragment();
+                fragmentTransaction.replace(R.id.container, ewastefragment);
+                fragmentTransaction.commit();
+                Toast.makeText(ImageActivity.this,
+                        "EWaste ImageButton Clicked.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 }
